@@ -11,7 +11,7 @@ while true; do
                 decompressed_next=$(7z l $name_decompressed | grep "Name" -A 2 | tail -n 1 | awk 'NF{print $NF}')
                 7z x $name_decompressed > /dev/null 2>&1 && name_decompressed=$decompressed_next
         else
-              # cat $name_decompressed; rm data*
+                cat $name_decompressed; rm data*
                 exit 1
         fi
 
